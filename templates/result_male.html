@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>  
+    <title>인공지능 얼굴형분석&안경추천</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/result.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Orelega+One&display=swap" rel="stylesheet">
+  </head>
+
+<body>
+
+<div class = 'all-box'>
+<section class='float-wrap'>
+
+<div class='main_box'>
+  {% if True %}
+  <img src="{{url_for('static', filename=result)}}" class='result_img' style='width: 300px; height: 450px;'>
+  {% endif %}
+  <h2>당신의 얼굴형은 {{faceshape}}입니다!</h2>
+  <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}}&nbsp;&nbsp;&nbsp; {% endfor %}</h3>
+  <h3>추천 안경을 클릭해서 씌워보세요!</h3>
+    
+</div>
+
+  <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 70px; left:50%;'>
+    <button type="submit", name='selection', value="alio.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/male/male_alio.jpg')}} style="width:140px; height:140px;"></button>
+      <a href='https://www.gentlemonster.com/kr/shop/item/aliox01/8NX8YBQ7JSZW' target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>알리오</p></a></form>
+    
+  <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 70px; left:61%;'>      
+    <button type="submit", name='selection', value="chacha.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/male/male_chacha.jpg')}} style="width:140px; height:140px;"></button>
+  <a href='https://www.gentlemonster.com/kr/shop/item/chacha02/EQQDAA4IPNNU' target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>차차</p></a></form>
+    
+  <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 70px; left:72%;'>      
+    <button type="submit", name='selection', value="danio.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/male/male_danio.jpg')}} style="width:140px; height:140px;"></button>
+    <a href='https://www.gentlemonster.com/kr/shop/item/dadio01/EQQDAA4J830D' target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>다디오</p></a></form>
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 270px; left:50%;'>      
+  <button type="submit", name='selection', value="day.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/male/male_day.jpg')}} style="width:140px; height:140px;"></button>
+          <a href="https://www.gentlemonster.com/kr/shop/item/dayb4opt/1HHMWUVZ26TTA" target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>데이</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 270px; left:61%;'>      
+  <button type="submit", name='selection', value="eddy.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/male/male_eddy.jpg')}} style="width:140px; height:140px;"></button>
+          <a href="https://www.gentlemonster.com/kr/shop/item/eddykc1/9F9VZTIY7BM5" target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>에디</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 270px; left:72%;'>      
+  <button type="submit", name='selection', value="liberty.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/male/male_liberty.jpg')}} style="width:140px; height:140px;"></button>
+          <a href="https://www.gentlemonster.com/kr/shop/item/libertyxd01/A6MJ1BBN36VD" target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>리버티</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 470px; left:50%;'>      
+  <button type="submit", name='selection', value="nep.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/male/male_nep.jpg')}} style="width:140px; height:140px;"></button>
+          <a href="https://www.gentlemonster.com/kr/shop/item/nebbm01/EQQDAA4FI4Y1" target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:44%;'>넵</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 470px; left:61%;'>      
+  <button type="submit", name='selection', value="ruto.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/male/male_ruto.jpg')}} style="width:140px; height:140px;"></button>
+          <a href="https://www.gentlemonster.com/kr/shop/item/lutto01/A6MJ1BBN9O1V" target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>루토</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 470px; left:72%;'>      
+  <button type="submit", name='selection', value="soa.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/male/male_soa.jpg')}} style="width:140px; height:140px;"></button>
+          <a href="https://www.gentlemonster.com/kr/shop/item/s-o-am01/DZDQ8SBN9Q3K" target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>S.O.A</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 670px; left:50%;'>      
+  <button type="submit", name='selection', value="taptap.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/male/male_taptap.jpg')}} style="width:140px; height:140px;"></button>
+          <a href="https://www.gentlemonster.com/kr/shop/item/taptapc1/DZDQ8SBQW6UX" target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>탭탭</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 670px; left:61%;'>      
+  <button type="submit", name='selection', value="unaci.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/male/male_unaci.jpg')}} style="width:140px; height:140px;"></button>
+          <a href="https://www.gentlemonster.com/kr/shop/item/unacb4/TXR2KK6L474Z" target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>우나씨</p></a></form>  
+
+
+</section></div>
+
+<footer>
+  <p>Copyright DScover All Rights Reserved.</p>
+</footer>
+    
+<style>
+    
+.result_img {
+    width: 300px;
+    height: 440px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+button {
+    display: hidden;
+}
+
+body {
+  background-image: url('/static/image_needed/background_trans.jpg');
+  background-size: cover;
+  overflow: hidden;
+  color: white;
+  font-family: 'Jua', sans-serif;
+}
+
+footer {
+  text-align: center;
+  background-color: #1e1e1e;
+  padding: 20px;
+  font-size: 12px;
+  color: #919191;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+#mainbox {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(30, 30, 30, 0.9);
+  padding: 8px 0;
+}
+
+.main_box {
+  margin-right: 55%;
+  margin-left: 10%;
+  margin-top: 100px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: rgba(30, 30, 30, 0.9);
+  text-align: center;
+  padding: 16px 32px;
+}
+
+.all-box {
+  width: 80%;
+  height: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(30, 30, 30, 0.9);
+  padding: 8px 0;
+}
+</style>
+
+</body>
+</html>

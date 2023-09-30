@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>  
+    <title>인공지능 얼굴형분석&안경추천</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/result.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Orelega+One&display=swap" rel="stylesheet">
+  </head>
+
+<body>
+
+
+<div class = 'all-box'>
+<section class='float-wrap'>
+
+<div class='main_box'>
+  {% if True %}
+  <img src="{{url_for('static', filename=result)}}" class='result_img' style='width: 300px; height: 450px;'>
+  {% endif %}
+  <h2>당신의 얼굴형은 {{faceshape}}입니다!</h2><br>
+  <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}}&nbsp;&nbsp;&nbsp;{% endfor %}</h3>
+  <h3>추천 안경을 클릭해서 씌워보세요!</h3>
+    
+</div>
+
+  <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 70px; left:50%;'>
+    <button type="submit", name='selection', value="deer.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/female/female_deer.jpg')}} style="width:140px; height:140px;"></button>
+      <a href='https://www.gentlemonster.com/kr/shop/item/dearclassicx02/9F9VZTIWE65Z' target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:15%;'>디어 클래식 X 02</p></a></form>
+    
+  <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 70px; left:61%;'>      
+    <button type="submit", name='selection', value="dion.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/female/female_dion.jpg')}} style="width:140px; height:140px;"></button>
+      <a href='https://www.gentlemonster.com/kr/shop/item/dion01-rg/FI30BRX6KAHQ' target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>디온</p></a></form>
+    
+  <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 70px; left:72%;'>      
+    <button type="submit", name='selection', value="jeff.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/female/female_jeff.jpg')}} style="width:140px; height:140px;"></button>
+      <a href='https://www.gentlemonster.com/kr/shop/item/jeffkc1/FI30BRX83Y9U' target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>제프</p></a></form>
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 270px; left:50%;'>      
+  <button type="submit", name='selection', value="jenny.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/female/female_jenny.jpg')}} style="width:140px; height:140px;"></button>
+          <a href="https://www.gentlemonster.com/kr/shop/item/jennie-cloudydayonly02/13NIQMI0L846F" target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:15%;'>클라우디 데이 온리</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 270px; left:61%;'>      
+  <button type="submit", name='selection', value="kito1.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/female/female_kito1.jpg')}} style="width:140px; height:140px;"></button>
+          <a href="https://www.gentlemonster.com/kr/shop/item/kitoc1/9F9VZTIZR5C3" target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>키토 1</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 270px; left:72%;'>      
+  <button type="submit", name='selection', value="kito2.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/female/female_kito2.jpg')}} style="width:140px; height:140px;"></button>
+          <a href="https://www.gentlemonster.com/kr/shop/item/kito01/9F9VZTIZKEL4" target="_blank"><font color="white"><p style='position: absolute; top: 140px; left:38%;'>키토 2</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 470px; left:50%;'>      
+  <button type="submit", name='selection', value="mantoo.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/female/female_mantoo.jpg')}} style="width:140px; height:140px;"></button>
+          <a href='https://www.gentlemonster.com/kr/shop/item/mantu01/FI30BRXA78J6' target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>만투</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 470px; left:61%;'>      
+  <button type="submit", name='selection', value="milanac2.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/female/female_milanac2.jpg')}} style="width:140px; height:140px;"></button>
+          <a href='https://www.gentlemonster.com/kr/shop/item/milanac2/XPN27AVX7QIR' target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:25%;'>밀란 A C2</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 470px; left:72%;'>      
+  <button type="submit", name='selection', value="southside.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/female/female_southside.jpg')}} style="width:140px; height:140px;"></button>
+          <a href="https://www.gentlemonster.com/kr/shop/item/southsidengc4/G9FND9PZGE15" target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:27%;'>사우스사이드</p></a></form>  
+    
+      <form action="{{url_for('reload')}}" method='POST' style='position: absolute; top: 670px; left:50%;'>      
+  <button type="submit", name='selection', value="zozo.png" class='styled'> <img src={{url_for('static', filename='glass_item_img/female/female_zozo.jpg')}} style="width:140px; height:140px;"></button>
+          <a href='https://www.gentlemonster.com/kr/shop/item/jojo01/9F9VZTIYYWWE' target='_blank'><font color="white"><p style='position: absolute; top: 140px; left:38%;'>죠죠</p></a></form>  
+    
+
+    
+    <div class='box01'>
+        
+    </div>
+
+</section></div>
+
+
+<footer>
+  <p>Copyright DScover All rights reserved.</p>
+</footer>
+
+<style>
+
+.result_img {
+    width: 300px;
+    height: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+button {
+    display: hidden;
+}
+.result_img {
+  width: 300px;
+  height: 440px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+button {
+  display: hidden;
+}
+
+body {
+background-image: url('/static/image_needed/background_trans.jpg');
+background-size: cover;
+overflow: hidden;
+color: white;
+font-family: 'Jua', sans-serif;
+}
+
+footer {
+text-align: center;
+background-color: #1e1e1e;
+padding: 20px;
+font-size: 12px;
+color: #919191;
+position: absolute;
+bottom: 0;
+right: 0;
+left: 0;
+}
+
+#mainbox {
+width: 45%;
+margin-left: auto;
+margin-right: auto;
+background-color: rgba(30, 30, 30, 0.9);
+padding: 8px 0;
+}
+
+.main_box {
+margin-right: 55%;
+margin-left: 10%;
+margin-top: 100px;
+border: 1px solid #ebebeb;
+box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+background-color: rgba(30, 30, 30, 0.9);
+text-align: center;
+padding: 16px 32px;
+}
+
+.all-box {
+width: 80%;
+height: 1000px;
+margin-left: auto;
+margin-right: auto;
+background-color: rgba(30, 30, 30, 0.9);
+padding: 8px 0;
+}
+
+
+</style>
+</body>
+</html>

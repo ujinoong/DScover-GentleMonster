@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>인공지능 얼굴형 분석&스타일링 추천</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/result.css')}}">
+    
+  </head>
+
+<body>
+
+<header>
+  <p>상단 배너</p>
+</header>
+
+<section class='float-wrap'>
+
+<div class='main_box'>
+  {% if True %}
+  <img src="{{url_for('static', filename=result)}}" class='result_img'>
+  {% endif %}
+  <h2>당신의 얼굴형은 {{faceshape}}입니다!</h2><br>
+  <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}} {% endfor %}</h3>
+  <h3>
+      {{glass}}
+    </h3>
+</div>
+
+
+<div class='image-box'>
+
+  <form action="{{url_for('reload')}}" method='POST'>
+    <button type="submit", name='selection', value="Button"> <img src="{{url_for('static', filename=test)}}" class='left1'></button>
+  </form>
+</div>
+
+</section>
+
+
+<footer>
+  <p>Copyright ~~~ All rights reserved.</p>
+</footer>
+    
+
+</body>
+</html>

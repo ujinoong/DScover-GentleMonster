@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang='ko'>
+  <head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>  
+    <title>인공지능 얼굴형분석&안경추천</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Orelega+One&display=swap" rel="stylesheet">
+  </head>
+
+    <body>
+        <div id='mainbox'>
+        <link rel="shortcut icon" href="#">
+
+        <div class="main_title">
+            <h1 style='color: white; font-size: 40px;'>인공지능 얼굴형 분석 & 안경 추천!</h1>
+        </div>
+
+        <div class='mainbox'>
+            <form method='POST' enctype="multipart/form-data" action="{{url_for('upload_done')}}">
+                <div class='gender-box'>
+                <label><input type="radio" name="gender" value="male" required='required'> 남자</label>
+                <label><input type="radio" name="gender" value="female"> 여자</label>
+                </div>
+                <br><br>
+
+                <label for='image-file' class="content" style="cursor:pointer" id='image-button'>
+                    <img style="width: 300px; height: 440px;" id="preview-image" src="static/image_needed/image_add.png">
+                </label>
+                <input type='file' name='file' id='image-file' onchange='readURL(this);' accept='image/*' required='required' />
+
+                <br><br><br>
+                
+                <input type='submit'>
+            </form>
+        </div></div>
+
+        <footer >
+            <p>Copyright DScover All rights reserved.</p>
+        </footer>
+        <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+        
+
+        <style>
+            .maintitle
+            @font-face {
+                font-family:'BMJUA';
+                src: url('static/fonts/BMJUA_ttf.ttf');
+            }
+
+            body {
+                background-image: url('static/image_needed/background_trans.jpg');
+                background-size: cover;
+                overflow: hidden;
+                color: white;
+                font-family: 'Jua', sans-serif;
+            }
+
+            #mainbox {
+                width: 45%;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: rgba(30, 30, 30, 0.9);
+                padding: 8px 0;
+            }
+
+            footer {
+                text-align: center;
+                background-color: #1e1e1e;
+                padding: 20px;
+                font-size: 12px;
+                color: #919191;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+            }
+            
+            .mainbox {
+                width: 500px;
+                padding: 30px;
+                margin: 30px;
+                margin-right: auto;
+                margin-left: auto;
+                border: 1px solid #ebebeb;
+                box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+                background-color: black;
+                text-align: center;
+            }
+
+            input[type=submit] {
+                background-color: #600BCD;
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+                width: 400px;
+              }
+
+        </style>
+        <script>
+            function readImage(input) {
+            // 인풋 태그에 파일이 있는 경우
+                if(input.files && input.files[0]) {
+                    // 이미지 파일인지 검사 (생략)
+                    // FileReader 인스턴스 생성
+                    const reader = new FileReader()
+                    // 이미지가 로드가 된 경우
+                    reader.onload = e => {
+                        const previewImage = document.getElementById("preview-image")
+                        previewImage.src = e.target.result
+                    }
+                    // reader가 이미지 읽도록 하기
+                    reader.readAsDataURL(input.files[0])
+                }
+            }    
+
+
+            // input file에 change 이벤트 부여
+            const inputImage = document.getElementById("image-file")
+            inputImage.addEventListener("change", e => {
+                readImage(e.target)
+            })
+
+        </script>
+        
+    </body>
+</html> 
