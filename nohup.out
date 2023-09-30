@@ -1,0 +1,461 @@
+ * Serving Flask app "application" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+172.17.0.1 - - [06/Jun/2022 08:12:23] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 08:12:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+172.17.0.1 - - [06/Jun/2022 08:12:23] "[36mGET /static/img/faceeg.jpg HTTP/1.1[0m" 304 -
+172.17.0.1 - - [06/Jun/2022 08:12:23] "[36mGET /static/img/addimage.png HTTP/1.1[0m" 304 -
+172.17.0.1 - - [06/Jun/2022 08:12:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [06/Jun/2022 08:12:31] "[37mPOST /uploaded/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 08:12:31] "[36mGET /static/css/result.css HTTP/1.1[0m" 304 -
+172.17.0.1 - - [06/Jun/2022 08:12:31] "[37mGET /static/result/7334a63e-d954-4dc0-999a-248b34d0b68e.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 08:12:31] "[36mGET /static/glass_item_img/angled1.jpg HTTP/1.1[0m" 304 -
+172.17.0.1 - - [06/Jun/2022 08:12:32] "[37mGET /uploaded/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 08:12:32] "[36mGET /static/img/0.jpg HTTP/1.1[0m" 304 -
+172.17.0.1 - - [06/Jun/2022 08:12:50] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 08:12:59] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 08:13:18] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 08:13:18] "[37mGET /static/css/styles.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 08:13:18] "[37mGET /static/img/faceeg.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 08:13:18] "[37mGET /static/img/addimage.png HTTP/1.1[0m" 200 -
+[2022-06-06 08:13:49,115] ERROR in app: Exception on /uploaded/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "application.py", line 96, in upload_done
+    return render_template('result.html', result='result/{}.jpg'.format(filename), faceshape=faceshape, sug = suggesting_items, sug_x = suggesting_x_items, all_item = all_item, gender=gender, test='glass_item_img/angled1.jpg')
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/workspace/testcval/templates/result.html", line 23, in top-level template code
+    <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}} {% endfor %}</h3>
+TypeError: 'NoneType' object is not iterable
+172.17.0.1 - - [06/Jun/2022 08:13:49] "[35m[1mPOST /uploaded/ HTTP/1.1[0m" 500 -
+[2022-06-06 08:13:52,699] ERROR in app: Exception on /uploaded/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "application.py", line 103, in reload
+    return render_template('result.html', result='img/0.jpg', faceshape=faceshape, sug = suggesting_items, sug_x = suggesting_x_items, all_item = all_item, gender=gender, test='glass_item_img/angled1.jpg')
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/workspace/testcval/templates/result.html", line 23, in top-level template code
+    <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}} {% endfor %}</h3>
+TypeError: 'NoneType' object is not iterable
+172.17.0.1 - - [06/Jun/2022 08:13:52] "[35m[1mGET /uploaded/ HTTP/1.1[0m" 500 -
+[2022-06-06 08:13:53,833] ERROR in app: Exception on /uploaded/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "application.py", line 103, in reload
+    return render_template('result.html', result='img/0.jpg', faceshape=faceshape, sug = suggesting_items, sug_x = suggesting_x_items, all_item = all_item, gender=gender, test='glass_item_img/angled1.jpg')
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/workspace/testcval/templates/result.html", line 23, in top-level template code
+    <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}} {% endfor %}</h3>
+TypeError: 'NoneType' object is not iterable
+172.17.0.1 - - [06/Jun/2022 08:13:53] "[35m[1mGET /uploaded/ HTTP/1.1[0m" 500 -
+[2022-06-06 08:13:53,974] ERROR in app: Exception on /uploaded/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "application.py", line 103, in reload
+    return render_template('result.html', result='img/0.jpg', faceshape=faceshape, sug = suggesting_items, sug_x = suggesting_x_items, all_item = all_item, gender=gender, test='glass_item_img/angled1.jpg')
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/workspace/testcval/templates/result.html", line 23, in top-level template code
+    <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}} {% endfor %}</h3>
+TypeError: 'NoneType' object is not iterable
+172.17.0.1 - - [06/Jun/2022 08:13:53] "[35m[1mGET /uploaded/ HTTP/1.1[0m" 500 -
+172.17.0.1 - - [06/Jun/2022 08:15:37] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 10:39:03] "[37mGET / HTTP/1.1[0m" 200 -
+[2022-06-06 10:39:16,544] ERROR in app: Exception on /uploaded/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "application.py", line 96, in upload_done
+    global suggesting_x_items
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/workspace/testcval/templates/result.html", line 23, in top-level template code
+    <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}} {% endfor %}</h3>
+TypeError: 'NoneType' object is not iterable
+172.17.0.1 - - [06/Jun/2022 10:39:16] "[35m[1mPOST /uploaded/ HTTP/1.1[0m" 500 -
+172.17.0.1 - - [06/Jun/2022 11:05:49] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:05:50] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:05:50] "[37mGET /static/css/styles.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:05:50] "[37mGET /static/img/faceeg.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:05:50] "[37mGET /static/img/addimage.png HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:05:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [06/Jun/2022 11:06:03] "[37mPOST /uploaded/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:06:03] "[37mGET /static/css/result.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:06:03] "[33mGET /static/result/a407ebf1-6728-4df9-8587-288ed7e52794.jpg HTTP/1.1[0m" 404 -
+172.17.0.1 - - [06/Jun/2022 11:06:04] "[37mGET /static/glass_item_img/angled1.jpg HTTP/1.1[0m" 200 -
+[2022-06-06 11:06:28,911] ERROR in app: Exception on /uploaded/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "application.py", line 96, in upload_done
+    # 비추천하는 아이템 > 미정
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/workspace/testcval/templates/result.html", line 23, in top-level template code
+    <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}} {% endfor %}</h3>
+TypeError: 'NoneType' object is not iterable
+172.17.0.1 - - [06/Jun/2022 11:06:28] "[35m[1mPOST /uploaded/ HTTP/1.1[0m" 500 -
+172.17.0.1 - - [06/Jun/2022 11:08:59] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:08:59] "[37mGET /static/css/styles.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:08:59] "[37mGET /static/img/faceeg.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:08:59] "[37mGET /static/img/addimage.png HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:08:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2022-06-06 11:09:08,195] ERROR in app: Exception on /uploaded/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "application.py", line 96, in upload_done
+    # 비추천하는 아이템 > 미정
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/workspace/testcval/templates/result.html", line 23, in top-level template code
+    <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}} {% endfor %}</h3>
+TypeError: 'NoneType' object is not iterable
+172.17.0.1 - - [06/Jun/2022 11:09:08] "[35m[1mPOST /uploaded/ HTTP/1.1[0m" 500 -
+[2022-06-06 11:24:55,178] ERROR in app: Exception on /uploaded/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "application.py", line 96, in upload_done
+    # 비추천하는 아이템 > 미정
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/workspace/testcval/templates/result.html", line 23, in top-level template code
+    <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}} {% endfor %}</h3>
+TypeError: 'NoneType' object is not iterable
+172.17.0.1 - - [06/Jun/2022 11:24:55] "[35m[1mPOST /uploaded/ HTTP/1.1[0m" 500 -
+[2022-06-06 11:25:04,284] ERROR in app: Exception on /uploaded/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "application.py", line 96, in upload_done
+    # 비추천하는 아이템 > 미정
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/workspace/testcval/templates/result.html", line 23, in top-level template code
+    <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}} {% endfor %}</h3>
+TypeError: 'NoneType' object is not iterable
+172.17.0.1 - - [06/Jun/2022 11:25:04] "[35m[1mPOST /uploaded/ HTTP/1.1[0m" 500 -
+172.17.0.1 - - [06/Jun/2022 11:25:08] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:25:08] "[37mGET /static/css/styles.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:25:08] "[37mGET /static/img/addimage.png HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:25:08] "[37mGET /static/img/faceeg.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [06/Jun/2022 11:25:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2022-06-06 11:25:14,018] ERROR in app: Exception on /uploaded/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "application.py", line 96, in upload_done
+    # 비추천하는 아이템 > 미정
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/workspace/testcval/templates/result.html", line 23, in top-level template code
+    <h3>추천하는 안경은 다음과 같습니다:<br>{% for item in sug %}{{item}} {% endfor %}</h3>
+TypeError: 'NoneType' object is not iterable
+172.17.0.1 - - [06/Jun/2022 11:25:14] "[35m[1mPOST /uploaded/ HTTP/1.1[0m" 500 -
+from: can't read /var/mail/flask
+/workspace/testcval/application.py: 2: /workspace/testcval/application.py: import: not found
+from: can't read /var/mail/face_shape
+from: can't read /var/mail/glasses2
+/workspace/testcval/application.py: 5: /workspace/testcval/application.py: import: not found
+/workspace/testcval/application.py: 8: /workspace/testcval/application.py: Syntax error: "(" unexpected
+from: can't read /var/mail/flask
+/workspace/testcval/application.py: 2: /workspace/testcval/application.py: import: not found
+from: can't read /var/mail/face_shape
+from: can't read /var/mail/glasses2
+/workspace/testcval/application.py: 5: /workspace/testcval/application.py: import: not found
+/workspace/testcval/application.py: 8: /workspace/testcval/application.py: Syntax error: "(" unexpected
+ * Serving Flask app "application" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "application.py", line 129, in <module>
+    application.run(host='0.0.0.0', debug=True)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 990, in run
+    run_simple(host, port, self, **options)
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/serving.py", line 1030, in run_simple
+    s.bind(server_address)
+OSError: [Errno 98] Address already in use
+ * Serving Flask app "application" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 706-350-273
+172.17.0.1 - - [10/Jun/2022 11:41:57] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:41:58] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:42:03] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:42:04] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:42:35] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:42:35] "[37mGET /static/css/styles.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:42:35] "[37mGET /static/image_needed/image_add.png HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:42:35] "[37mGET /static/image_needed/background_trans.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:42:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [10/Jun/2022 11:42:54] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:42:54] "[37mGET /static/image_needed/image_add.png HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:42:54] "[37mGET /static/css/styles.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:42:55] "[37mGET /static/image_needed/background_trans.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:42:56] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:03] "[37mPOST /uploaded/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:04] "[37mGET /static/glass_item_img/male/male_day.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:04] "[37mGET /static/css/result.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:04] "[37mGET /static/glass_item_img/male/male_alio.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:04] "[37mGET /static/glass_item_img/male/male_chacha.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:04] "[37mGET /static/glass_item_img/male/male_danio.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:04] "[33mGET /static/result/2299cce2-409e-428b-8132-d211b019be93.jpg HTTP/1.1[0m" 404 -
+172.17.0.1 - - [10/Jun/2022 11:43:05] "[37mGET /static/glass_item_img/male/male_eddy.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:05] "[37mGET /static/glass_item_img/male/male_ruto.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:05] "[37mGET /static/glass_item_img/male/male_soa.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:05] "[37mGET /static/glass_item_img/male/male_nep.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:05] "[37mGET /static/glass_item_img/male/male_taptap.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:05] "[37mGET /static/glass_item_img/male/male_unaci.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:05] "[37mGET /static/glass_item_img/male/male_liberty.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:19] "[37mPOST /uploaded/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:20] "[37mGET /static/css/result.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:20] "[37mGET /static/result/998eb81f-214f-4a55-bb92-5302d0daf74e.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:20] "[37mGET /static/glass_item_img/male/male_alio.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:20] "[37mGET /static/glass_item_img/male/male_chacha.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:20] "[37mGET /static/glass_item_img/male/male_danio.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:20] "[37mGET /static/glass_item_img/male/male_day.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:20] "[37mGET /static/glass_item_img/male/male_eddy.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:21] "[37mGET /static/glass_item_img/male/male_liberty.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:21] "[37mGET /static/glass_item_img/male/male_nep.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:21] "[37mGET /static/glass_item_img/male/male_ruto.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:21] "[37mGET /static/glass_item_img/male/male_soa.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:21] "[37mGET /static/glass_item_img/male/male_taptap.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:21] "[37mGET /static/glass_item_img/male/male_unaci.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:51] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:43:52] "[37mGET /static/image_needed/image_add.png HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:48:44] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:48:45] "[37mGET /static/css/styles.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:48:45] "[37mGET /static/image_needed/image_add.png HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 11:48:46] "[37mGET /static/image_needed/background_trans.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:12:22] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:12:22] "[37mGET /static/css/styles.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:12:22] "[37mGET /static/image_needed/image_add.png HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:12:22] "[37mGET /static/image_needed/background_trans.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:12:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [10/Jun/2022 12:28:41] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:28:42] "[37mGET /static/css/styles.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:28:42] "[37mGET /static/image_needed/image_add.png HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:28:43] "[37mGET /static/image_needed/background_trans.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:28:58] "[31m[1mPOST /uploaded/ HTTP/1.1[0m" 400 -
+172.17.0.1 - - [10/Jun/2022 12:29:02] "[31m[1mPOST /uploaded/ HTTP/1.1[0m" 400 -
+172.17.0.1 - - [10/Jun/2022 12:29:11] "[37mPOST /uploaded/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:30:05] "[31m[1mPOST /uploaded/ HTTP/1.1[0m" 400 -
+172.17.0.1 - - [10/Jun/2022 12:49:18] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:18] "[37mGET /static/css/styles.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:18] "[37mGET /static/image_needed/image_add.png HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:18] "[37mGET /static/image_needed/background_trans.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [10/Jun/2022 12:49:33] "[37mPOST /uploaded/ HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[37mGET /static/glass_item_img/male/male_day.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[37mGET /static/glass_item_img/male/male_danio.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[37mGET /static/glass_item_img/male/male_chacha.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[33mGET /static/result/7e95578b-6531-42eb-8165-768833003a82.jpg HTTP/1.1[0m" 404 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[37mGET /static/glass_item_img/male/male_alio.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[37mGET /static/css/result.css HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[37mGET /static/glass_item_img/male/male_eddy.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[37mGET /static/glass_item_img/male/male_ruto.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[37mGET /static/glass_item_img/male/male_liberty.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[37mGET /static/glass_item_img/male/male_nep.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[37mGET /static/glass_item_img/male/male_soa.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[37mGET /static/glass_item_img/male/male_unaci.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:34] "[37mGET /static/glass_item_img/male/male_taptap.jpg HTTP/1.1[0m" 200 -
+172.17.0.1 - - [10/Jun/2022 12:49:41] "[37mPOST /uploaded1/ HTTP/1.1[0m" 200 -
+corrupted double-linked list (not small)
