@@ -1,0 +1,38 @@
+
+input[type=file] {
+    display: none;
+}
+
+
+.main_title {
+    text-align: center;
+    color: #070607;
+}
+
+.first-img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+}
+
+.drop-zone {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+.gender-box {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align:center
+}
+
+div #mainbox {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #1e1e1e;
+}
